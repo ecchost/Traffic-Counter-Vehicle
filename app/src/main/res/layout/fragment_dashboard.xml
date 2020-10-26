@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-
+        <variable
+            name="dashboardViewModel"
+            type="com.example.trafficcounter.viewmodels.DashboardViewModels" />
 
     </data>
 

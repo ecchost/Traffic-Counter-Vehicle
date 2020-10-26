@@ -40,4 +40,16 @@ public class DashboardViewModels extends ViewModel {
         valueMutableLiveData.setValue(value);
         Log.d("Value W4 Truck : ", String.valueOf(value.getW4truckvalue()));
     }
+
+    public void addValueW6_3Axle(int point){
+        value.setW6value(value.getW6value()+point);
+        valueMutableLiveData.setValue(value);
+        Log.d("Value W6 - 3Axle : ", String.valueOf(value.getW6value()));
+    }
+
+    public void addValue4Axle(int point){
+        value.setAxle4value(value.getAxle4value()+point);
+        valueMutableLiveData.setValue(value);
+        Log.d("Value 4 Axle : ", String.valueOf(value.getAxle4value()));
+    }
 }

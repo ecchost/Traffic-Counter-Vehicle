@@ -1,21 +1,26 @@
 package com.example.trafficcounter.fragments;
 
 import android.os.Bundle;
-
+import androidx.databinding.DataBindingUtil;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.trafficcounter.R;
-
+import com.example.trafficcounter.databinding.FragmentDashboardBinding;
+import com.example.trafficcounter.models.Value;
+import com.example.trafficcounter.viewmodels.DashboardViewModels;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Dashboard#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Dashboard extends Fragment {
+
+    public DashboardViewModels mViewModels;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,7 +66,13 @@ public class Dashboard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        FragmentDashboardBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dashboard, container, false);
 
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        mViewModels = new ViewModelProvider(this).get(DashboardViewModels.class);
+        binding.setDashboardViewModel(mViewModels);
+        binding.setLifecycleOwner(this);
+        return binding.getRoot();
+
+//        return inflater.inflate(R.layout.fragment_dashboard, container, false);
     }
 }
