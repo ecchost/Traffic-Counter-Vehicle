@@ -7,17 +7,23 @@ public class Value {
     private int w4truckvalue;
     private int w6value;
     private int axle4value;
-
+    private int totalValue;
+    private int lightVehicle;
+    private int heavyVehicle;
     public Value(){
     }
 
-    public Value(int w2value, int w3value, int w4stdvalue, int w4truckvalue, int w6value, int axle4value) {
+    public Value(int w2value, int w3value, int w4stdvalue, int w4truckvalue, int w6value, int axle4value, int totalValue, int lightVehicle, int heavyVehicle) {
         this.w2value = w2value;
         this.w3value = w3value;
         this.w4stdvalue = w4stdvalue;
         this.w4truckvalue = w4truckvalue;
         this.w6value = w6value;
         this.axle4value = axle4value;
+        this.totalValue = totalValue;
+        this.lightVehicle = lightVehicle;
+        this.heavyVehicle = heavyVehicle;
+
     }
 
     public int getW2value() {
@@ -66,5 +72,29 @@ public class Value {
 
     public void setAxle4value(int axle4value) {
         this.axle4value = axle4value;
+    }
+
+    public int getTotalValue() {
+        return totalValue;
+    }
+
+    public void setTotalValue(int totalValue) {
+        this.totalValue = totalValue;
+    }
+
+    public int getLightVehicle() {
+        return lightVehicle;
+    }
+
+    public void setLightVehicle(int lightVehicle) {
+        this.lightVehicle = lightVehicle;
+    }
+
+    public int getHeavyVehicle() {
+        return heavyVehicle;
+    }
+
+    public void setHeavyVehicle(int heavyVehicle) {
+        this.heavyVehicle = heavyVehicle;
     }
 }
